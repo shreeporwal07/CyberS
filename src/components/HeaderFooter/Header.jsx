@@ -13,8 +13,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useAuth0 } from "@auth0/auth0-react";
-
 import classes from "../Styles/Header.module.css";
+import { Link } from "@mui/material";
+import { ShoppingBasket } from "@mui/icons-material";
 
 const pages = [
   { id: 1, name: "Home", to: "/" },
@@ -37,7 +38,7 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" style={{ backgroundColor: "#001830" }}>
+    <AppBar position="static" style={{ backgroundColor: "#082032" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 0 }}>
@@ -47,7 +48,7 @@ function Header() {
               </IconButton>
             </Tooltip>
           </Box>
-         
+
           <Typography
             variant="h6"
             noWrap
@@ -65,7 +66,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            Name?
+            ZenBazaar
           </Typography>
 
           <Typography
@@ -84,7 +85,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            Name?
+            ZenBazaar
           </Typography>
           <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -124,7 +125,7 @@ function Header() {
                   <Button
                     href={page.to}
                     key={page.name}
-                    sx={{ my: 2, mr: 3, color: "#001830", display: "block" }}
+                    sx={{ my: 2, mr: 3, color: "#082032", display: "block" }}
                   >
                     {page.name}
                   </Button>
@@ -154,7 +155,7 @@ function Header() {
                   pl: "1.3rem",
                   pr: "1.3rem",
                   "&:hover": {
-                    backgroundColor: "orange",
+                    backgroundColor: "#FF4C29",
                   },
                 }}
               >
@@ -177,7 +178,7 @@ function Header() {
                   pl: "1.3rem",
                   pr: "1.3rem",
                   "&:hover": {
-                    backgroundColor: "orange",
+                    backgroundColor: "#FF4C29",
                   },
                 }}
               >
@@ -197,7 +198,7 @@ function Header() {
                   pl: "1.3rem",
                   pr: "1.3rem",
                   "&:hover": {
-                    backgroundColor: "orange",
+                    backgroundColor: "#FF4C29",
                   },
                 }}
               >

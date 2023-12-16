@@ -1,8 +1,7 @@
 .home{
-    height: 100vh;
     margin: 0;
     padding: 0;
-    /* background: url("https://th.bing.com/th/id/R.29689ee695358c7a4d9f7113503e0ce1?rik=6HIuZS76Z69kyg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f9%2f9%2fa%2f303223.jpg&ehk=wKbX8kutaqpX0Mpjt8FXrT2OovGoag4up3GOuaBTmME%3d&risl=&pid=ImgRaw&r=0"); */
+    background-color: #273342;
     background-position: right;
     background-size: cover;
     margin-bottom: 0;
@@ -43,4 +42,30 @@ h1{
 p{
     color: rgb(76, 75, 75);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.home_image{
+    width: 100%;
+    /* mask-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0)); */
+    margin-bottom: -50px;
+    background-image: url("https://hdn-1.fynd.com/company/327/applications/60744d605bdf7f6a00a86ff9/theme/pictures/free/original/theme-image-1661339632400.png");
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    display: flex;
+    align-items: flex-end;
+    border: none;
+}
+.home_row{
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    width: 100%;
+}
+.fade_bottom{
+    height :250px;
+    width: 100%;
+    background:linear-gradient(to bottom, rgba(234,237,237,0),#273342);
+    background-size: 100% 250px;
+    background-repeat: no-repeat;
 }
