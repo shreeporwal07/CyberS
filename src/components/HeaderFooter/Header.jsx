@@ -13,14 +13,17 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useAuth0 } from "@auth0/auth0-react";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import classes from "../Styles/Header.module.css";
-import { Link } from "@mui/material";
-import { ShoppingBasket } from "@mui/icons-material";
+import Search from "../Helpers/Search";
+import { useState } from "react";
+import Cart from "../Helpers/Cart";
+import SearchIcon from '@mui/icons-material/Search';
 
 const pages = [
   { id: 1, name: "Home", to: "/" },
   { id: 2, name: "About", to: "/About" },
-  // { id: 3, name: "Medicine", to: "/Medicine" },
+  // { id: 3, name: "Cart", to: "/Cart" },
   // { id: 4, name: "Emergency", to: "/Meeting" },
   // { id: 5, name: "Appointment", to: "/AppointmentForm" },
 ];
@@ -36,8 +39,10 @@ function Header() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+   const [showChart, setShowCart] = useState(false);
+   const [search, setSearch] = useState(false);
 
-  return (
+  return (<>
     <AppBar position="static" style={{ backgroundColor: "#082032" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -162,12 +167,9 @@ function Header() {
                 {page.name}
               </Button>
             ))}
-            {isAuthenticated ? (
-              <Button
-                className={classes.authButton}
-                onClick={() =>
-                  logout({ logoutParams: { returnTo: window.location.origin } })
-                }
+            <Button
+                key={"Cart"}
+                onClick={()=>setShowCart(true)}
                 sx={{
                   my: 2,
                   mr: 7,
@@ -182,12 +184,12 @@ function Header() {
                   },
                 }}
               >
-                Logout
+                
+                <ShoppingCartIcon className={classes.cart} />
               </Button>
-            ) : (
               <Button
-                onClick={() => loginWithRedirect()}
-                className={classes.authButton}
+                key={"Cart"}
+                onClick={()=>setSearch(true)}
                 sx={{
                   my: 2,
                   mr: 7,
@@ -202,13 +204,17 @@ function Header() {
                   },
                 }}
               >
-                Login
+                <SearchIcon className={classes.search} />
               </Button>
-            )}
+            
+            
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
+    {showChart && <Cart setShowCart={setShowCart} />}
+    {search && <Search setSearch={setSearch}/> }
+    </>
   );
 }
 export default Header;
