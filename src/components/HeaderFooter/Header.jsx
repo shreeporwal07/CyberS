@@ -43,11 +43,11 @@ function Header() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip>
               <IconButton href={pages[0].to}>
-                <Avatar src={logo} style={{ filter: "invert(100%)" }} />
+                <Avatar src={logo} style={{ height:"70px",width:"70px" }} />
               </IconButton>
             </Tooltip>
           </Box>
-         
+
           <Typography
             variant="h6"
             noWrap
@@ -65,7 +65,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            Name?
+            ZenBazzar
           </Typography>
 
           <Typography
@@ -84,7 +84,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            Name?
+            ZenBazzar
           </Typography>
           <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -161,49 +161,7 @@ function Header() {
                 {page.name}
               </Button>
             ))}
-            {isAuthenticated ? (
-              <Button
-                className={classes.authButton}
-                onClick={() =>
-                  logout({ logoutParams: { returnTo: window.location.origin } })
-                }
-                sx={{
-                  my: 2,
-                  mr: 7,
-                  color: "white",
-                  display: "block",
-                  fontWeight: "800",
-                  borderRadius: 2,
-                  pl: "1.3rem",
-                  pr: "1.3rem",
-                  "&:hover": {
-                    backgroundColor: "orange",
-                  },
-                }}
-              >
-                Logout
-              </Button>
-            ) : (
-              <Button
-                onClick={() => loginWithRedirect()}
-                className={classes.authButton}
-                sx={{
-                  my: 2,
-                  mr: 7,
-                  color: "white",
-                  display: "block",
-                  fontWeight: "800",
-                  borderRadius: 2,
-                  pl: "1.3rem",
-                  pr: "1.3rem",
-                  "&:hover": {
-                    backgroundColor: "orange",
-                  },
-                }}
-              >
-                Login
-              </Button>
-            )}
+           
           </Box>
         </Toolbar>
       </Container>
