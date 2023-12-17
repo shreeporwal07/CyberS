@@ -57,7 +57,7 @@ const Cart = (props) => {
           <div className={classes.emptycart}>
             <AddShoppingCartIcon style={{ fontSize: "100px" }} />
             <span className={classes.emptycarttext}>Your Cart is Empty</span>
-            <button className={classes.returncta} onClick={() => props.setShowCart(false) }>Continue Shopping</button>
+            <button className={classes.returncta}onClick={() => props.setShowCart(false)}>Continue Shopping</button>
           </div>
         ) }
 
