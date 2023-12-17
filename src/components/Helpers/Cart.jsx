@@ -69,7 +69,7 @@ const Cart = (props) => {
               className={classes.text}
               onClick={() => props.setShowCart(false)}
             >
-              <CloseIcon />
+              <CloseIcon onClick={() => props.setShowCart(false)}/>
               close{" "}
             </span>
           </span>
@@ -79,7 +79,7 @@ const Cart = (props) => {
           <div className={classes.emptycart}>
             <AddShoppingCartIcon style={{ fontSize: "100px" }} />\
             <span className={classes.emptycarttext}>Your Cart is Empty</span>
-            <button className={classes.returncta}>Continue Shopping</button>
+            <button className={classes.returncta} onClick={() => props.setShowCart(false) }>Continue Shopping</button>
           </div>
         ) }
 
