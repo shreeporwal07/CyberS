@@ -65,6 +65,7 @@ const ProductPage = () => {
             />
           </div>
           <div className={classes["right"]}>
+            
             {/* <span className={classes["name"]}>{product.title}</span>
             <span className={classes["price"]}>&#8377;{product.price}</span>
             <span className={classes["desc"]}>{product.description}</span> */}
