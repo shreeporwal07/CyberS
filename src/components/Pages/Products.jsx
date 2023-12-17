@@ -27,7 +27,7 @@ function Product(props) {
   //   });
   // };
   return (
-    <div className={classes.product}>
+    <div className={classes.product} >
       <img src={props.image} alt=""></img>
       <div className={classes.product_info}>
         <p>{props.title}</p>

@@ -12,7 +12,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import classes from "../Styles/ProductPage.module.css";
 import prod from "../../assets/img/logo.png"
 import { useEffect } from "react";
-const ProductPage = () => {
+const ProductPage = (props) => {
   useEffect(() => {
     const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
 
