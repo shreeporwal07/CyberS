@@ -11,12 +11,11 @@ const Cart = (props) => {
         <div className={classes.cartheader}>
           <span className={classes.heading}>Shopping Cart</span>
           <span className={classes.close}>
-            <CloseIcon />
-
             <span
               className={classes.text}
               onClick={() => props.setShowCart(false)}
             >
+              <CloseIcon />
               close{" "}
             </span>
           </span>
