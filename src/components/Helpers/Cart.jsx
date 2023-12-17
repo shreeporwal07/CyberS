@@ -7,8 +7,6 @@ import CartItem from "./CartItem";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 const Cart = (props) => {
 
-
-
   const cartItemsRemoveHandler = (id) => {
     cartCtx.removeItem(id);
   };
@@ -18,11 +16,6 @@ const Cart = (props) => {
   const cartCtx = useContext(CartContext);
   const totalAmount = `${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = cartCtx.items.length > 0;
-
-
-
-
-
 
  const cartItems = (
      <>
@@ -40,21 +33,6 @@ const Cart = (props) => {
       ))}
     </>
   );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div className={classes.cartpanel}>
       <div
@@ -77,9 +55,9 @@ const Cart = (props) => {
        
         { !hasItems && (
           <div className={classes.emptycart}>
-            <AddShoppingCartIcon style={{ fontSize: "100px" }} />\
+            <AddShoppingCartIcon style={{ fontSize: "100px" }} />
             <span className={classes.emptycarttext}>Your Cart is Empty</span>
-            <button className={classes.returncta}>Continue Shopping</button>
+            <button className={classes.returncta}onClick={() => props.setShowCart(false)}>Continue Shopping</button>
           </div>
         ) }
 
