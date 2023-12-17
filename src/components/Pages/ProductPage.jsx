@@ -11,8 +11,28 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import classes from "../Styles/ProductPage.module.css";
 import prod from "../../assets/img/logo.png"
-
+import { useEffect } from "react";
 const ProductPage = () => {
+  useEffect(() => {
+    const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
+
+    const updateGradientCirclePosition = () => {
+      const scrollPosition = window.scrollY;
+      const circleTop = -40 + scrollPosition * 0.1;
+      const circleRight = 30 - scrollPosition * 0.1;
+
+      gradientCircle.style.top = `${circleTop}vh`;
+      gradientCircle.style.right = `${circleRight}vh`;
+    };
+
+    window.addEventListener("scroll", updateGradientCirclePosition);
+
+    return () => {
+      window.removeEventListener("scroll", updateGradientCirclePosition);
+    };
+  }, []);
+  
+
   // const [quantity, setQuantity] = useState(1);
   // const { id } = useParams();
   //   const { handleAddToCart } = useContext(Context);

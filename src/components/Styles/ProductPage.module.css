@@ -2,6 +2,8 @@
   background: linear-gradient(to bottom, black, #273342);
   height: 80vh;
   padding-top: 20vh;
+  position: relative;
+  overflow: hidden;
 }
 .layout {
   max-width: calc(100% - 20px);
@@ -128,7 +130,7 @@
 .gradientCircle {
   position: absolute;
   top: -40vh;
-  right: 10vh;
+  right: 40vh;
   z-index: 0;
   width: 70vh;
   height: 70vh;

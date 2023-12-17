@@ -2,9 +2,45 @@ import React from "react";
 import classes from "../Styles/Home.module.css";
 import { motion } from "framer-motion";
 import Products from "./Products";
-import Product from "../Products/Product";
-import ProductPage from "./ProductPage";
+import { useEffect } from "react";
 function Home() {
+  useEffect(() => {
+    const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
+
+    const updateGradientCirclePosition = () => {
+      const scrollPosition = window.scrollY;
+      const circleTop = 0 + scrollPosition * 0.1;
+      const circleRight = 0 - scrollPosition * 0.1;
+
+      gradientCircle.style.bottom = `${circleTop}vh`;
+      gradientCircle.style.right = `${circleRight}vh`;
+    };
+
+    window.addEventListener("scroll", updateGradientCirclePosition);
+
+    return () => {
+      window.removeEventListener("scroll", updateGradientCirclePosition);
+    };
+  }, []);
+  useEffect(() => {
+    const gradientCircle1 = document.querySelector(`.${classes.gradientCircle1}`);
+
+    const updateGradientCirclePosition = () => {
+      const scrollPosition = window.scrollY;
+      const circleTop = -20+ scrollPosition * 0.1;
+      const circleRight = -10 - scrollPosition * 0.1;
+
+      gradientCircle1.style.top = `${circleTop}vh`;
+      gradientCircle1.style.left = `${circleRight}vh`;
+    };
+
+    window.addEventListener("scroll", updateGradientCirclePosition);
+
+    return () => {
+      window.removeEventListener("scroll", updateGradientCirclePosition);
+    };
+  }, []);
+
   function handleClick() {
     window.location.href = "/AppointmentForm";
   }
@@ -102,7 +138,6 @@ function Home() {
             image="https://images-eu.ssl-images-amazon.com/images/I/71tYPz++3+L._AC_UL320_SR320,320_.jpg"
           />
         </div>
-        <ProductPage />
       </motion.div>
     </>
   );

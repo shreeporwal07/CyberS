@@ -7,7 +7,6 @@
 .cart-product {
     padding: 20px 15px;
     display: flex;
-    gap: 10px;
 }
 
 .img-container {
@@ -31,8 +30,7 @@
     top: 0;
     right: 0;
     cursor: pointer;
-    
-   
+    margin-bottom: 0.5rem;   
 }
 .close-btn svg {
     font-size: 10px;
@@ -72,8 +70,7 @@
     width: fit-content;
     display: flex;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    height: 30px;
-    margin-bottom: 8px;
+    padding-bottom: 0.5rem;
 }
 
 .quantity-buttons span {
@@ -84,6 +81,7 @@
     justify-content: center;
     cursor: pointer;
     color: #6b6b6b;
+
 }
 
 .quantity-buttons span:nth-child(1) {
@@ -102,4 +100,7 @@
 
 .cart-product:hover {
     background-color: rgba(0, 0, 0, 0.05);
+}
+.quantity-btn{
+    font-size: 1rem;
 }
