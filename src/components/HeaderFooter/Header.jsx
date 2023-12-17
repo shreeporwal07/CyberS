@@ -22,9 +22,7 @@ import { useContext } from "react";
 import CartContext from "../../store/cart-context";
 import { useState } from "react";
 
-const pages = [
-  { id: 1, name: "Home", to: "/Home" },
-];
+const pages = [{ id: 1, name: "Home", to: "/Home" }];
 
 function Header() {
   const cartCtx = useContext(CartContext);
@@ -185,7 +183,7 @@ function Header() {
                   my: 2,
                   mr: 7,
                   color: "white",
-                  
+
                   fontWeight: "800",
                   borderRadius: 2,
                   pl: "1.3rem",
@@ -221,7 +219,6 @@ function Header() {
                 <ShoppingCartIcon className={classes.cart} />
                 <span className={classes.badge}>{totalItems}</span>
               </Button>
-              
             </Box>
           </Toolbar>
         </Container>

@@ -1,15 +1,14 @@
-
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "../Pages/Home";
 
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 
 import { AnimatePresence } from "framer-motion";
 import ProductPage from "../Pages/ProductPage";
 import SignUp from "../Pages/SignUp";
 import Login from "../Pages/Login";
-import React from 'react';
-
+import React from "react";
+import Productdesc from "../Pages/Productsdesc";
 import { auth } from "../../firebase";
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -23,17 +22,14 @@ const AnimatedRoutes = () => {
   }, []);
 
   return (
-    
-     
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-      <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-        <Route path="/Home" element={<Home user={userName} />}/>
-        <Route path="/ProductPage/:id" element={<ProductPage/>} />
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/product" element={<Productdesc />} />
+        <Route path="/Home" element={<Home user={userName} />} />
       </Routes>
     </AnimatePresence>
-
   );
 };
 

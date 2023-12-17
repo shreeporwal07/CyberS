@@ -6,18 +6,9 @@ import Products from "./Products";
 import {useState, useEffect } from "react";
 import { db } from "../../firebase";
 import { onValue, ref } from "firebase/database";
-
+import ProductPage from "./ProductPage";
 
 function Home(props) {
-
-
-
-
-
-
-
-
-
   const [showdata, setShowdata] = useState(false);
   const [productsData, setProductsData] = useState([]);
 
@@ -87,6 +78,8 @@ function Home(props) {
     "https://pngimg.com/uploads/headphones/headphones_PNG7652.png";
   const imageUrl1 =
     "https://www.pngarts.com/files/2/Black-Abstract-Lines-Transparent.png";
+    
+
   return (
     <>
       <motion.div
@@ -125,7 +118,8 @@ function Home(props) {
         </div>
         <div className={classes.home_row}>
           {!showdata && <p>Loading...</p>}
-          {showdata && productsData.map((product) => (
+          
+         {showdata && productsData.map((product) => (
               <Products
                 id={product.id}
                 title={product.title}

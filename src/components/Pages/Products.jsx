@@ -2,17 +2,21 @@ import React from "react";
 import classes from "../Styles/Products.module.css";
 // import { useStateValue } from "./StateProvider";
 import { useContext } from "react";
+
 import CartContext from "../../store/cart-context";
 
 function Product(props) {
   const cartCtx=useContext(CartContext)
   const price = props.price;
+
   const addItemToCartHandler= () =>
   {
      cartCtx.addItem({id:props.id,name:props.title,amount:1,price:props.price ,image:props.image})
   }
+ 
 
   return (
+    
     <div className={classes.product} >
       <img src={props.image} alt=""></img>
       <div className={classes.product_info}>
@@ -32,6 +36,7 @@ function Product(props) {
       <button onClick={addItemToCartHandler} >Add to basket</button>
       {/* product id,title,price,rating,image */}
     </div>
+    
   );
 }
 

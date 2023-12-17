@@ -1,8 +1,3 @@
-import { useState } from "react";
-// import { Context } from "../../utils/context";
-import { useParams } from "react-router-dom";
-// import useFetch from "../../hooks/useFetch";
-// import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -10,28 +5,27 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import classes from "../Styles/ProductPage.module.css";
-import prod from "../../assets/img/logo.png"
+import prod from "../../assets/img/logo.png";
 import { useEffect } from "react";
 const ProductPage = (props) => {
-  useEffect(() => {
-    const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
+  // useEffect(() => {
+  //   const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
 
-    const updateGradientCirclePosition = () => {
-      const scrollPosition = window.scrollY;
-      const circleTop = -40 + scrollPosition * 0.1;
-      const circleRight = 30 - scrollPosition * 0.1;
+  //   const updateGradientCirclePosition = () => {
+  //     const scrollPosition = window.scrollY;
+  //     const circleTop = -40 + scrollPosition * 0.1;
+  //     const circleRight = 30 - scrollPosition * 0.1;
 
-      gradientCircle.style.top = `${circleTop}vh`;
-      gradientCircle.style.right = `${circleRight}vh`;
-    };
+  //     gradientCircle.style.top = `${circleTop}vh`;
+  //     gradientCircle.style.right = `${circleRight}vh`;
+  //   };
 
-    window.addEventListener("scroll", updateGradientCirclePosition);
+  //   window.addEventListener("scroll", updateGradientCirclePosition);
 
-    return () => {
-      window.removeEventListener("scroll", updateGradientCirclePosition);
-    };
-  }, []);
-  
+  //   return () => {
+  //     window.removeEventListener("scroll", updateGradientCirclePosition);
+  //   };
+  // }, []);
 
   // const [quantity, setQuantity] = useState(1);
   // const { id } = useParams();
@@ -53,22 +47,20 @@ const ProductPage = (props) => {
 
   return (
     <div className={classes["single-product-main-content"]}>
+      <button onClick={props.setShowproduct}></button>
       <div className={classes["layout"]}>
         <div className={classes["single-product-page"]}>
-        <div className={classes.gradientCircle}></div>
+          <div className={classes.gradientCircle}></div>
           <div className={classes["left"]}>
-            <img
-              src={prod}
-              alt="props.altname"
-            />
+            <img src={props.image} alt="product" />
           </div>
           <div className={classes["right"]}>
             {/* <span className={classes["name"]}>{product.title}</span>
             <span className={classes["price"]}>&#8377;{product.price}</span>
             <span className={classes["desc"]}>{product.description}</span> */}
-            <span className={classes["name"]}>mic</span>
-            <span className={classes["price"]}>&#8377;20</span>
-            <span className={classes["desc"]}>sounds GOOD</span>
+            <span className={classes["name"]}>{props.tittle}</span>
+            <span className={classes["price"]}>&#8377;{props.price}</span>
+            <span className={classes["desc"]}>{props.tittle}</span>
 
             <div className={classes["cart-buttons"]}>
               {/* <div className={classes["quantity-buttons"]}>
