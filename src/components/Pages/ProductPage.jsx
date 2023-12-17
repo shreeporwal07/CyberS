@@ -13,21 +13,21 @@ const ProductPage = () => {
   useEffect(() => {
     const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
 
-  //   const updateGradientCirclePosition = () => {
-  //     const scrollPosition = window.scrollY;
-  //     const circleTop = -40 + scrollPosition * 0.1;
-  //     const circleRight = 30 - scrollPosition * 0.1;
+    const updateGradientCirclePosition = () => {
+      const scrollPosition = window.scrollY;
+      const circleTop = -40 + scrollPosition * 0.1;
+      const circleRight = 30 - scrollPosition * 0.1;
 
-  //     gradientCircle.style.top = `${circleTop}vh`;
-  //     gradientCircle.style.right = `${circleRight}vh`;
-  //   };
+      gradientCircle.style.top = `${circleTop}vh`;
+      gradientCircle.style.right = `${circleRight}vh`;
+    };
 
-  //   window.addEventListener("scroll", updateGradientCirclePosition);
+    window.addEventListener("scroll", updateGradientCirclePosition);
 
-  //   return () => {
-  //     window.removeEventListener("scroll", updateGradientCirclePosition);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener("scroll", updateGradientCirclePosition);
+    };
+  }, []);
 
   // const [quantity, setQuantity] = useState(1);
   // const { id } = useParams();
@@ -49,27 +49,26 @@ const ProductPage = () => {
 
   return (
     <div className={classes["single-product-main-content"]}>
-      <button onClick={props.setShowproduct}></button>
       <div className={classes["layout"]}>
         <div className={classes["single-product-page"]}>
           <div className={classes.gradientCircle}></div>
           <div className={classes["left"]}>
-            <img
-              src={imageUrl}
-              alt="props.altname"
-            />
+            <img src={imageUrl} alt="props.altname" />
           </div>
           <div className={classes["right"]}>
-            
             {/* <span className={classes["name"]}>{product.title}</span>
             <span className={classes["price"]}>&#8377;{product.price}</span>
             <span className={classes["desc"]}>{product.description}</span> */}
-            <span className={classes["name"]}>Planet Musicians' Choice SH180BMM Stereo Headphones</span>
+            <span className={classes["name"]}>
+              Planet Musicians' Choice SH180BMM Stereo Headphones
+            </span>
             <span className={classes["price"]}>&#8377;1549</span>
-            <span className={classes["desc"]}>Immerse yourself in exceptional audio with our premium headphones.
+            <span className={classes["desc"]}>
+              Immerse yourself in exceptional audio with our premium headphones.
               Engineered for unparalleled sound quality, comfort, and style,
               these headphones deliver an immersive experience for music
-              enthusiasts and audiophiles alike.</span>
+              enthusiasts and audiophiles alike.
+            </span>
 
             <div className={classes["cart-buttons"]}>
               {/* <div className={classes["quantity-buttons"]}>
