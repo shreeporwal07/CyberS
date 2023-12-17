@@ -4,10 +4,28 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 
 import InputControl from "../InputControl/InputControl";
 import { auth } from "../../firebase";
-
+import { useEffect } from "react";
 import styles from "../Styles/Login.module.css";
 
 function Login() {
+  useEffect(() => {
+    const gradientCircle1 = document.querySelector(`.${styles.gradientCircle1}`);
+
+    const updateGradientCirclePosition = () => {
+      const scrollPosition = window.scrollY;
+      const circleTop = -5+ scrollPosition * 0.1;
+      const circleRight = -0 - scrollPosition * 0.1;
+
+      gradientCircle1.style.top = `${circleTop}vh`;
+      gradientCircle1.style.left = `${circleRight}vh`;
+    };
+
+    window.addEventListener("scroll", updateGradientCirclePosition);
+
+    return () => {
+      window.removeEventListener("scroll", updateGradientCirclePosition);
+    };
+  }, []);
   const navigate = useNavigate();
   const [values, setValues] = useState({
     email: "",
@@ -37,6 +55,7 @@ function Login() {
   };
   return (
     <div className={styles.container}>
+      <div className={styles.gradientCircle1}></div>
       <div className={styles.innerBox}>
         <h1 className={styles.heading}>Login</h1>
 

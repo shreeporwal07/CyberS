@@ -22,29 +22,7 @@ function Home() {
         });
       }
     });
-  }, []);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+  }, []);  
   useEffect(() => {
     const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
 
