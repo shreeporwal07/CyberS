@@ -17,7 +17,7 @@ Welcome to ZenBazaar, your one-stop destination for a delightful online shopping
 
 - **Product Details:** Explore a diverse range of products, each with detailed information, including images, descriptions, and pricing.
 
-![Product Details](https://drive.google.com/uc?id=your_product_details_image_id)
+![Product Details](https://drive.google.com/uc?id=1ttbZf32LujnHSjnCf6XuFchV57tfnTLG)
 
 ### 3. Shopping Cart
 
