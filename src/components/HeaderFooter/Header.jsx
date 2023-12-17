@@ -20,6 +20,7 @@ import Search from "../Helpers/Search";
 import Cart from "../Helpers/Cart";
 import { useState } from "react";
 
+
 const pages = [
   { id: 1, name: "Home", to: "/" },
 ];
@@ -181,7 +182,7 @@ function Header() {
                   my: 2,
                   mr: 7,
                   color: "white",
-                  display: "block",
+                  
                   fontWeight: "800",
                   borderRadius: 2,
                   pl: "1.3rem",
@@ -201,7 +202,10 @@ function Header() {
                   my: 2,
                   mr: 7,
                   color: "white",
-                  display: "block",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
                   fontWeight: "800",
                   borderRadius: 2,
                   pl: "1.3rem",
@@ -212,6 +216,7 @@ function Header() {
                 }}
               >
                 <ShoppingCartIcon className={classes.cart} />
+                <span className={classes.badge}>{5}</span>
               </Button>
               {isAuthenticated ? (
               <Button

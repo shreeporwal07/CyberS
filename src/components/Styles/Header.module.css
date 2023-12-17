@@ -46,3 +46,10 @@
   .authbutton:hover {
     background-color: #1976D2;
   }
+  .badge {
+    background-color: #b94517;
+    padding: 0.15rem 0.75rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+    font-weight: bold;
+  }
