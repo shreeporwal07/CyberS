@@ -1,15 +1,15 @@
 # ZenBazaar - E-commerce Website
 
 Welcome to ZenBazaar, your one-stop destination for a delightful online shopping experience. ZenBazaar is an E-commerce website designed to provide users with a seamless shopping journey, featuring a variety of products and user-friendly functionalities.
-![Home]("https://drive.google.com/file/d/1WRXsMNb2aSJJhb1G9olj7nCTnGZ6M0Yj/view?usp=sharing")
+![Home](https://drive.google.com/file/d/1WRXsMNb2aSJJhb1G9olj7nCTnGZ6M0Yj)
 ## Features
 
 ### 1. User Authentication
 
 - **Login/Signup:** Users can create an account or log in to an existing one, ensuring a personalized and secure shopping experience.
 
-![Login]("https://drive.google.com/file/d/1OD4HAIWxkVFxiBlQU_hE7PWmkWop2yaf/view?usp=sharing")
-![Signup]("https://drive.google.com/file/d/1XqlBnx82R_SAk_baGMhiN6Hju7nHFETN/view?usp=sharing")
+![Login](https://drive.google.com/file/d/1OD4HAIWxkVFxiBlQU_hE7PWmkWop2yaf)
+![Signup](https://drive.google.com/file/d/1XqlBnx82R_SAk_baGMhiN6Hju7nHFETN)
 
 ### 2. Product Catalog
 
@@ -23,7 +23,7 @@ Welcome to ZenBazaar, your one-stop destination for a delightful online shopping
 
 - **Cart Management:** The cart is dynamically updated as users add or remove items, reflecting the total amount and quantity.
 
-![Shopping Cart]("https://drive.google.com/file/d/1RQ53TT_DOnXU_cvSzDd7jC462NdiKnsA/view?usp=sharing")
+![Shopping Cart](https://drive.google.com/file/d/1RQ53TT_DOnXU_cvSzDd7jC462NdiKnsA)
 
 ### 4. Firebase Integration
 
