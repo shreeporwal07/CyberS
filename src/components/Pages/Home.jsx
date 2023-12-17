@@ -1,13 +1,50 @@
 import React from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { get, ref, set } from "firebase/database";
 import { db } from "../../firebase";
 import classes from "../Styles/Home.module.css";
 import { motion } from "framer-motion";
 import Products from "./Products";
 import { useEffect } from "react";
 import { useState } from "react";
+import { onValue, ref } from "firebase/database";
 function Home() {
+  const [showdata, setShowdata] = useState(false);
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(() => {
+    const query = ref(db, "products");
+    return onValue(query, (snapshot) => {
+      const data = snapshot.val();
+
+      if (snapshot.exists()) {
+        Object.values(data).map((project) => {
+          setProductsData((projects) => [...projects, project]);
+          setShowdata(true);
+        });
+      }
+    });
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   useEffect(() => {
     const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
 
@@ -93,7 +130,7 @@ function Home() {
           <div className={classes.fade_bottom}></div>
         </div>
         <div className={classes.home_row}>
-          {/* {console.log(productsData)}
+          {console.log(productsData)}
           {!showdata ? (
             <p>Loading </p>
           ) : (
@@ -106,7 +143,7 @@ function Home() {
                 image={product.image}
               />
             ))
-          )} */}
+          )}
         </div>
       </motion.div>
     </>

@@ -22,7 +22,7 @@ import { useState } from "react";
 
 
 const pages = [
-  { id: 1, name: "Home", to: "/" },
+  { id: 1, name: "Home", to: "/Home" },
 ];
 
 function Header() {
