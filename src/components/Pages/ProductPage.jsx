@@ -13,6 +13,8 @@ import classes from "../Styles/ProductPage.module.css";
 import prod from "../../assets/img/logo.png"
 import { useEffect } from "react";
 const ProductPage = () => {
+  const imageUrl =
+    "https://pngimg.com/uploads/headphones/headphones_PNG7652.png";
   useEffect(() => {
     const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
 
@@ -58,7 +60,7 @@ const ProductPage = () => {
         <div className={classes.gradientCircle}></div>
           <div className={classes["left"]}>
             <img
-              src={prod}
+              src={imageUrl}
               alt="props.altname"
             />
           </div>
@@ -66,9 +68,12 @@ const ProductPage = () => {
             {/* <span className={classes["name"]}>{product.title}</span>
             <span className={classes["price"]}>&#8377;{product.price}</span>
             <span className={classes["desc"]}>{product.description}</span> */}
-            <span className={classes["name"]}>mic</span>
-            <span className={classes["price"]}>&#8377;20</span>
-            <span className={classes["desc"]}>sounds GOOD</span>
+            <span className={classes["name"]}>Planet Musicians' Choice SH180BMM Stereo Headphones</span>
+            <span className={classes["price"]}>&#8377;1549</span>
+            <span className={classes["desc"]}>Immerse yourself in exceptional audio with our premium headphones.
+              Engineered for unparalleled sound quality, comfort, and style,
+              these headphones deliver an immersive experience for music
+              enthusiasts and audiophiles alike.</span>
 
             <div className={classes["cart-buttons"]}>
               {/* <div className={classes["quantity-buttons"]}>
