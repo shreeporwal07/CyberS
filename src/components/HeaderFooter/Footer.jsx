@@ -6,8 +6,8 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-
-const Footer = () => {
+import { useEffect, useRef } from "react";
+const Footer = () => {  
   return (
     <div className={classes.footerwrapper}>
       <div className={classes.footer}>

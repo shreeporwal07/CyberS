@@ -48,13 +48,16 @@ p{
     /* mask-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0)); */
     margin-bottom: -50px;
     background-color: black;
-    height: 110vh;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     /* background-repeat: no-repeat; */
     display: flex;
     align-items: flex-end;
     border: none;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10vh;
 }
 .home_row{
     display: flex;

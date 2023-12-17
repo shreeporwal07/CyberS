@@ -5,37 +5,46 @@ import { db } from "../../firebase";
 import classes from "../Styles/Home.module.css";
 import { motion } from "framer-motion";
 import Products from "./Products";
-import Product from "../Products/Product";
-import ProductPage from "./ProductPage";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 function Home() {
-  const [productsData, setProductsData] = useState([]);
-  const [showdata, setShowdata] = useState(false);
+  useEffect(() => {
+    const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
 
+    const updateGradientCirclePosition = () => {
+      const scrollPosition = window.scrollY;
+      const circleTop = 0 + scrollPosition * 0.1;
+      const circleRight = 0 - scrollPosition * 0.1;
 
+      gradientCircle.style.bottom = `${circleTop}vh`;
+      gradientCircle.style.right = `${circleRight}vh`;
+    };
 
-  // useEffect(() => {
-  //   const productsRef = ref(db, "Products");
-  //   console.log(productsRef);
-  //   const fetchData = async () => {
-  //     try {
-  //       const snapshot = await productsRef.get();
-  //       const productList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-  //       setProductsData(productList);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   };
+    window.addEventListener("scroll", updateGradientCirclePosition);
 
-  //   fetchData();
-  //   console.log(productsData);
-  //   setShowdata(true);
-  // }, []);
+    return () => {
+      window.removeEventListener("scroll", updateGradientCirclePosition);
+    };
+  }, []);
+  useEffect(() => {
+    const gradientCircle1 = document.querySelector(`.${classes.gradientCircle1}`);
 
+    const updateGradientCirclePosition = () => {
+      const scrollPosition = window.scrollY;
+      const circleTop = -20+ scrollPosition * 0.1;
+      const circleRight = -10 - scrollPosition * 0.1;
 
+      gradientCircle1.style.top = `${circleTop}vh`;
+      gradientCircle1.style.left = `${circleRight}vh`;
+    };
 
+    window.addEventListener("scroll", updateGradientCirclePosition);
 
-  
+    return () => {
+      window.removeEventListener("scroll", updateGradientCirclePosition);
+    };
+  }, []);
+
   function handleClick() {
     window.location.href = "/AppointmentForm";
   }
@@ -84,7 +93,7 @@ function Home() {
           <div className={classes.fade_bottom}></div>
         </div>
         <div className={classes.home_row}>
-          {console.log(productsData)}
+          {/* {console.log(productsData)}
           {!showdata ? (
             <p>Loading </p>
           ) : (
@@ -97,9 +106,8 @@ function Home() {
                 image={product.image}
               />
             ))
-          )}
+          )} */}
         </div>
-        <ProductPage />
       </motion.div>
     </>
   );
