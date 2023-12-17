@@ -1,6 +1,5 @@
 import React from "react";
-
-import classes from "./Products.module.css";
+import classes from "../Styles/Products.module.css";
 // import { useStateValue } from "./StateProvider";
 import { useContext } from "react";
 import CartContext from "../../store/cart-context";
