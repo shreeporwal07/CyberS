@@ -18,14 +18,17 @@ import classes from "../Styles/Header.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import Search from "../Helpers/Search";
 import Cart from "../Helpers/Cart";
+import { useContext } from "react";
+import CartContext from "../../store/cart-context";
 import { useState } from "react";
-
 
 const pages = [
   { id: 1, name: "Home", to: "/Home" },
 ];
 
 function Header() {
+  const cartCtx = useContext(CartContext);
+  const totalItems = cartCtx.items.length;
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -216,51 +219,9 @@ function Header() {
                 }}
               >
                 <ShoppingCartIcon className={classes.cart} />
-                <span className={classes.badge}>{5}</span>
+                <span className={classes.badge}>{totalItems}</span>
               </Button>
-              {isAuthenticated ? (
-              <Button
-                className={classes.authButton}
-                onClick={() =>
-                  logout({ logoutParams: { returnTo: window.location.origin } })
-                }
-                sx={{
-                  my: 2,
-                  mr: 7,
-                  color: "white",
-                  display: "block",
-                  fontWeight: "800",
-                  borderRadius: 2,
-                  pl: "1.3rem",
-                  pr: "1.3rem",
-                  "&:hover": {
-                    backgroundColor: "rgba(255, 76, 41, 0.8)", // 50% transparency
-                  },
-                }}
-              >
-                Logout
-              </Button>
-            ) : (
-              <Button
-                onClick={() => loginWithRedirect()}
-                className={classes.authButton}
-                sx={{
-                  my: 2,
-                  mr: 7,
-                  color: "white",
-                  display: "block",
-                  fontWeight: "800",
-                  borderRadius: 2,
-                  pl: "1.3rem",
-                  pr: "1.3rem",
-                  "&:hover": {
-                    backgroundColor: "rgba(255, 76, 41, 0.8)", // 50% transparency
-                  },
-                }}
-              >
-                Login
-              </Button>
-            )}
+              
             </Box>
           </Toolbar>
         </Container>

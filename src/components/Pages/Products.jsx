@@ -1,8 +1,18 @@
 import React from "react";
+
 import classes from "./Products.module.css";
 // import { useStateValue } from "./StateProvider";
+import { useContext } from "react";
+import CartContext from "../../store/cart-context";
 
-function Product({ id, title, price, rating, image }) {
+function Product(props) {
+  const cartCtx=useContext(CartContext)
+  const price = props.price;
+  const addItemToCartHandler= () =>
+  {
+     cartCtx.addItem({id:props.id,name:props.title,amount:1,price:props.price ,image:props.image})
+  }
+
   // const [{basket},dispatch]=useStateValue();
   // const addToBasket=()=>{
   //   //add item to basket
@@ -19,22 +29,22 @@ function Product({ id, title, price, rating, image }) {
   // };
   return (
     <div className={classes.product}>
-      <img src={image} alt=""></img>
+      <img src={props.image} alt=""></img>
       <div className={classes.product_info}>
-        <p>{title}</p>
+        <p>{props.title}</p>
         <p className={classes.product_price}>
-          <small>$</small>
-          <strong>{price}</strong>
+          <small></small>
+          <strong>&#8377;{price}</strong>
         </p>
         <div className={classes.product_rating}>
-          {Array(rating)
+          {Array(props.rating)
             .fill()
             .map((_) => (
               <p>⭐</p>
             ))}
         </div>
       </div>
-      <button >Add to basket</button>
+      <button onClick={addItemToCartHandler} >Add to basket</button>
       {/* product id,title,price,rating,image */}
     </div>
   );

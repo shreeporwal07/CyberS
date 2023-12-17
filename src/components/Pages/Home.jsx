@@ -1,50 +1,12 @@
 import React from "react";
-import { db } from "../../firebase";
+
 import classes from "../Styles/Home.module.css";
 import { motion } from "framer-motion";
 import Products from "./Products";
 import { useEffect } from "react";
-import { useState } from "react";
-import { onValue, ref } from "firebase/database";
-function Home() {
-  const [showdata, setShowdata] = useState(false);
-  const [productsData, setProductsData] = useState([]);
-
-  useEffect(() => {
-    const query = ref(db, "products");
-    return onValue(query, (snapshot) => {
-      const data = snapshot.val();
-
-      if (snapshot.exists()) {
-        Object.values(data).map((project) => {
-          setProductsData((projects) => [...projects, project]);
-          setShowdata(true);
-        });
-      }
-    });
-  }, []);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+function Home(props) {
   useEffect(() => {
     const gradientCircle = document.querySelector(`.${classes.gradientCircle}`);
 
@@ -64,11 +26,13 @@ function Home() {
     };
   }, []);
   useEffect(() => {
-    const gradientCircle1 = document.querySelector(`.${classes.gradientCircle1}`);
+    const gradientCircle1 = document.querySelector(
+      `.${classes.gradientCircle1}`
+    );
 
     const updateGradientCirclePosition = () => {
       const scrollPosition = window.scrollY;
-      const circleTop = -20+ scrollPosition * 0.1;
+      const circleTop = -20 + scrollPosition * 0.1;
       const circleRight = -10 - scrollPosition * 0.1;
 
       gradientCircle1.style.top = `${circleTop}vh`;
@@ -89,6 +53,7 @@ function Home() {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
+  console.log(props.products);
   const imageUrl =
     "https://pngimg.com/uploads/headphones/headphones_PNG7652.png";
   const imageUrl1 =
@@ -105,7 +70,7 @@ function Home() {
         <div className={classes.home_image}>
           <img
             src={imageUrl1}
-            alt="Background Image"
+            alt="Background"
             className={classes.backgroundImage}
           />
           <div className={classes.gradientCircle1}></div>
@@ -124,26 +89,22 @@ function Home() {
           <div className={classes.gradientCircle}></div>
           <img
             src={imageUrl}
-            alt="Your Image"
+            alt="Your"
             className={classes.outsideImage}
           />
           <div className={classes.fade_bottom}></div>
         </div>
         <div className={classes.home_row}>
-          {console.log(productsData)}
-          {!showdata ? (
-            <p>Loading </p>
-          ) : (
-            productsData.map((product) => (
+          {props.products.map((product) => (
               <Products
                 id={product.id}
                 title={product.title}
                 price={product.price}
-                rating={product}
+                rating={product.rating}
                 image={product.image}
               />
             ))
-          )}
+        }
         </div>
       </motion.div>
     </>
