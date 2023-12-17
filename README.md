@@ -25,7 +25,7 @@ Welcome to ZenBazaar, your one-stop destination for a delightful online shopping
 
 - **Cart Management:** The cart is dynamically updated as users add or remove items, reflecting the total amount and quantity.
 
-![Shopping Cart](https://drive.google.com/uc?id=1RQ53TT_DOnXU_cvSzDd7jC462NdiKnsA)
+![Shopping Cart](https://drive.google.com/uc?export=view&id=1zIS_vI_YkQk7CU4899dp5cbcFUZQiCpi)
 
 ### 4. Firebase Integration
 
