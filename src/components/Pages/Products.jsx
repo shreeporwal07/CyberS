@@ -12,20 +12,6 @@ function Product(props) {
      cartCtx.addItem({id:props.id,name:props.title,amount:1,price:props.price ,image:props.image})
   }
 
-  // const [{basket},dispatch]=useStateValue();
-  // const addToBasket=()=>{
-  //   //add item to basket
-  //   dispatch({
-  //     type: "ADD_TO_BASKET",
-  //     item:{
-  //       id,
-  //       title,
-  //       price,
-  //       rating,
-  //       image,
-  //     },
-  //   });
-  // };
   return (
     <div className={classes.product} >
       <img src={props.image} alt=""></img>
